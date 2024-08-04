@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head data-th-replace="~{fragment :: head}"></head>
+<body>
+    <header data-th-replace="~{fragment :: header}"></header>
+
+    <main>
+        <nav data-th-replace="~{fragment :: nav('/home', 'Back to Home')}"></nav>
+        <section>
+            <form action="/create-book" method="post">
+
+                <div>
+                    <label for="book-name">Book name</label>
+                    <input type="text" id="book-name" name="bookName" placeholder="ex: Java For Begginers">
+                </div>
+
+                <div>
+                    <label for="book-author">Author name</label>
+                    <input type="text" id="book-author" name="authorName" placeholder="ex: Rasmikanta Das .">
+                </div>
+
+                <div>
+                    <label for="total-page">Total Page</label>
+                    <input type="number" id="total-page" name="totalPage" placeholder="ex: 612 page .">
+                </div>
+
+                <div>
+                    <label for="publication-date">Publication Date</label>
+                    <input type="date" id="publication-date" name="publicationDate" placeholder="ex: 3-1-2002.">
+                </div>
+                
+                <div>
+                    <input type="radio" id="paper-back" name="bookFormat" value="PAPERBACK">
+                    <label for="paper-back">Paper Back</label>
+
+                    <input type="radio" id="hard-cover" name="bookFormat" value="HARDCOVER">
+                    <label for="hard-cover">Hard Cover</label>                 
+                </div>
+                <div>
+                    <label for="book-catagory">Book Catagory</label>
+
+                    <select name="catagory" id="book-catagory">
+                        <option value="sports">sports</option>
+                        <option value="sports">sports</option>
+                        <option value="music">music</option>
+                        <option value="movies">movies</option>
+                        <option value="books">books</option>
+                        <option value="travel">travel</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="amazon">Amazon</label>
+                    <input type="checkbox" id="amazon" name="availability" value="amazon">
+
+                    <label for="flipkart">Flipkart</label>
+                    <input type="checkbox" id="flipkart" name="availability" value="flipkart">
+
+                    <label for="offline">Offline</label>
+                    <input type="checkbox" id="offline" name="availability" value="offline">
+                </div>
+
+                <div>
+                    <label for="book-description">Book Description</label>
+                    <textarea name="description" id="book-description" placeholder="Enter any Text ."></textarea>
+                </div>
+                <input type="submit">
+            </form>
+        </section>
+    </main>
+</body>
+</html>

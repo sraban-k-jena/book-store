@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head data-th-fragment="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store Application</title>
+</head>
+<body>
+
+    <header data-th-fragment="header">
+        <h2>Book Store Application</h2>
+    </header>
+
+    <nav data-th-fragment="nav(url,title)">
+        <a data-th-href="${url}" data-th-text="${title}"></a>
+    </nav>
+    
+</body>
+</html>
