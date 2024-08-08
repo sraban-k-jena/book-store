@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head data-th-replace="~{fragment :: head(~{})}"></head>
+  <head data-th-replace="~{fragment :: head(~{::link})}">
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
   <body>
     <header data-th-replace="~{fragment :: header}"></header>
 
     <main>
       <nav data-th-replace="~{fragment :: nav('/new-book', 'New Book ')}"></nav>
 
-      <section>Books</section>
+      <section>
+        <article data-th-each="book :${books}">
+          <div class="card-head">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg/640px-Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg"
+              alt="...."
+              height="200"
+            />
+          </div>
+          <div class="card-body">
+            <h4 data-th-text="${book.bookName}"></h4>
+            <a href="#">Read More</a>
+          </div>
+        </article>
+      </section>
     </main>
   </body>
 </html>
