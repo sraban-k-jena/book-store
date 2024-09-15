@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-   
-</body>
+  <head data-th-replace="~{fragment :: head(~{::link})}">
+    <link rel="stylesheet" href="/css/book-details.css" />
+  </head>
+  <body>
+    <header data-th-replace="~{fragment :: header}"></header>
+
+    <main>
+      <nav data-th-replace="~{fragment :: nav('/home', 'Back to Home')}"></nav>
+
+      <section>
+        <article data-th-object="${book}">
+          <div class="card-left">
+            <img data-th-src="|/book/image/*{bookId}|" alt="...." />
+            <p
+              data-th-text="|catagory: *{catagory}|"
+              class="text-center capitalize"
+            ></p>
+          </div>
+          <div class="card-right">
+            <h2 data-th-text="*{bookName}"></h2>
+            <div class="flex-between mt-1">
+              <h4 data-th-text="*{authorName}"></h4>
+              <p data-th-text="*{publicationDate}" class="text-light-blue"></p>
+            </div>
+
+            <div class="flex-between">
+              <p data-th-text="|Total Page: *{totalPage}|"></p>
+              <p data-th-text="*{bookFormat}" class="text-light-blue"></p>
+            </div>
+            <p
+              data-th-utext="*{description}"
+              class="text-justify mt-1 lh-1"
+            ></p>
+
+            <div class="flex-align-center-1">
+              <div
+                class="mt-1 availability flex-align-center-1"
+                data-th-each="avl :*{availability}"
+                data-th-text="${avl}"
+              ></div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
 </html>

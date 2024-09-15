@@ -1,5 +1,42 @@
-.flex-align-center-1{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.flex-align-center-1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text-center {
+  text-align: center;
+}
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+.text-light-blue {
+  color: #9290c3;
+}
+.text-justify {
+  text-align: justify;
+}
+
+.lh-2 {
+  line-height: 1.5rem;
+}
+.p-half {
+  padding: 0.5rem;
+}
+.link-btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-decoration: underline;
+  color: #d0adf0;
+  font-weight: 400;
+  cursor: pointer;
 }

@@ -1,0 +1,24 @@
+article {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+article img {
+  width: 100%;
+  height: min(100%, 350px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.availability {
+  border: 2px solid #9290c3;
+  padding: 0.5rem 2rem;
+  border-radius: 1000px;
+}
+
+@media (max-width: 600px) {
+  article {
+    grid-template-columns: 1fr;
+  }
+}

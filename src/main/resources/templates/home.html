@@ -13,16 +13,29 @@
         <article data-th-each="book :${books}">
           <div class="card-head">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg/640px-Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg"
+              data-th-src="|/book/image/${book.bookId}|"
               alt="...."
               height="200"
             />
           </div>
           <div class="card-body">
             <h4 data-th-text="${book.bookName}"></h4>
-            <a href="#">Read More</a>
+            <a data-th-href="|/details?id=${book.bookId}|">Read More</a>
+          </div>
+
+          <div class="card-footer flex-between p-half">
+            <a data-th-href="|/update-book?id=${book.bookId}|">Edit</a>
+            <!-- <a data-th-href="|/remove-book?id=${book.bookId}|">Remove</a> -->
+            <button
+              type="button"
+              class="link-btn"
+              data-th-onClick="|onRemove(${book.bookId})|"
+            >
+              Remove
+            </button>
           </div>
         </article>
+        <script src="/js/home.js"></script>
       </section>
     </main>
   </body>

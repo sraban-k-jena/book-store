@@ -1,0 +1,15 @@
+server:
+  port: 1300
+
+spring:
+  application:
+    name: "book_store"
+
+  datasource:
+    url: "jdbc:mysql://localhost:3306/sb_july"
+    username: "root"
+    password: "root"
+
+application:
+  title: "book-store"
+  version: 1.0

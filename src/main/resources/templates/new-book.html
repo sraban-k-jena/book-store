@@ -9,8 +9,12 @@
     <main>
       <nav data-th-replace="~{fragment :: nav('/home', 'Back to Home')}"></nav>
       <section>
-        <form action="/create-book" method="post">
-          <div class="input-container">
+        <form
+          action="/create-update-book"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="input-container" data-th-object="${book}">
             <div>
               <label for="book-name">Book name</label>
               <input
@@ -19,6 +23,7 @@
                 name="bookName"
                 placeholder="ex: Java For Begginers"
                 class="input-field"
+                data-th-field="*{bookName}"
               />
             </div>
 
@@ -30,6 +35,7 @@
                 name="authorName"
                 placeholder="ex: Rasmikanta Das ."
                 class="input-field"
+                data-th-field="*{authorName}"
               />
             </div>
 
@@ -41,6 +47,7 @@
                 name="totalPage"
                 placeholder="ex: 612 page ."
                 class="input-field"
+                data-th-field="*{totalPage}"
               />
             </div>
 
@@ -52,6 +59,7 @@
                 name="publicationDate"
                 placeholder="ex: 3-1-2002."
                 class="input-field"
+                data-th-value="*{publicationDate}"
               />
             </div>
 
@@ -61,6 +69,7 @@
                 id="paper-back"
                 name="bookFormat"
                 value="PAPERBACK"
+                data-th-field="*{bookFormat}"
               />
               <label for="paper-back">Paper Back</label>
 
@@ -69,6 +78,7 @@
                 id="hard-cover"
                 name="bookFormat"
                 value="HARDCOVER"
+                data-th-field="*{bookFormat}"
               />
               <label for="hard-cover">Hard Cover</label>
             </div>
@@ -80,6 +90,7 @@
                 id="amazon"
                 name="availability"
                 value="amazon"
+                data-th-field="*{availability}"
               />
 
               <label for="flipkart">Flipkart</label>
@@ -88,6 +99,7 @@
                 id="flipkart"
                 name="availability"
                 value="flipkart"
+                data-th-field="*{availability}"
               />
 
               <label for="offline">Offline</label>
@@ -96,13 +108,19 @@
                 id="offline"
                 name="availability"
                 value="offline"
+                data-th-field="*{availability}"
               />
             </div>
 
             <div>
               <label for="book-catagory">Book Catagory</label>
 
-              <select name="catagory" id="book-catagory" class="input-field">
+              <select
+                name="catagory"
+                id="book-catagory"
+                class="input-field"
+                data-th-field="*{catagory}"
+              >
                 <option value="sports">sports</option>
                 <option value="sports">sports</option>
                 <option value="music">music</option>
@@ -130,8 +148,10 @@
                 id="book-description"
                 placeholder="Enter any Text ."
                 class="input-field"
+                data-th-field="*{description}"
               ></textarea>
             </div>
+            <input type="hidden" name="bookId" data-th-field="*{bookId}" />
           </div>
           <div class="submit-btn-container">
             <input type="submit" />
